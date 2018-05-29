@@ -14,7 +14,6 @@ if (isset($_GET['txt_search'])) {
 		WHERE
 			body LIKE '%{$search_text}%'
 		OR
-			text LIKE '%{$search_text}%'
+			title LIKE '%{$search_text}%'
 	");
-
 }
