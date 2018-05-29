@@ -23,6 +23,20 @@ if (isset($_GET['txt_search']) && !empty($_GET['txt_search'])) {
 	</div>
 <?php
 
+	if ($query->num_rows) {
+
+		// loop through results
+		while ($result = $query->fetch_object()) {
+?>
+			<div class="result">
+				<a href="#">
+					<?php echo $result->title; ?>
+				</a>
+			</div>
+<?php
+		}
+	}
+
 } else {
 
 	echo 'No search text input!';
