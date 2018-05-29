@@ -16,4 +16,11 @@ if (isset($_GET['txt_search'])) {
 		OR
 			title LIKE '%{$search_text}%'
 	");
+
+?>
+	<div class="result_count">
+		Found <?php echo $query->num_rows; ?> result(s).
+	</div>
+<?php
+
 }
