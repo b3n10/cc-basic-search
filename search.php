@@ -3,7 +3,7 @@
 // require db connection
 require_once 'db/connect.php';
 
-if (isset($_GET['txt_search'])) {
+if (isset($_GET['txt_search']) && !empty($_GET['txt_search'])) {
 
 	$search_text = $db->escape_string($_GET['txt_search']);
 
@@ -22,5 +22,9 @@ if (isset($_GET['txt_search'])) {
 		Found <?php echo $query->num_rows; ?> result(s).
 	</div>
 <?php
+
+} else {
+
+	echo 'No search text input!';
 
 }
